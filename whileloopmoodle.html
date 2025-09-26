@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+    let rng1 = 0;
+    let rng2 = 0;
+    let tries = 0;
+    drawView()
+
+        function drawView(){
+            document.getElementById('app').innerHTML = /*HTML*/ `
+            <button onclick="numberGen()">a</button>
+            <div id="result"></div>
+            <div id="tries"></div>
+            
+            `}
+    function numberGen(){
+        let index1;
+        let index2;
+        index1 = Math.floor(Math.random() * 10)
+        rng1 = index1
+        index2 = Math.floor(Math.random() * 10)
+        rng2 = index2
+        while(rng1 !== rng2){
+            
+        
+        index1 = Math.floor(Math.random() * 10)
+        rng1 = index1
+        index2 = Math.floor(Math.random() * 10)
+        rng2 = index2
+        tries ++
+        console.log(rng1,rng2,tries);
+    }
+    document.getElementById("result").innerHTML = "result = "+ rng1+ "  .  . " + rng2;    
+    document.getElementById("tries").innerHTML = "attempts = " + tries;
+    tries = 0
+    }
+ 
+    </script>
+</body>
+</html>
